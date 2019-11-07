@@ -26,13 +26,8 @@ and use the commands add, commit and push to your own changes
 for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explination about all git steps
 
 # Terraform useful providers
-[]
-The inspiration for this repository come from the Hashicorp [documentation](https://www.terraform.io/docs/modules/index.html)
 
-NOTE: these terraform files are using a null Provider
-
-Null Provider
-[The null provider is a rather-unusual provider that has constructs that intentionally do nothing. This may sound strange, and indeed these constructs do not need to be used in most cases, but they can be useful in various situations to help orchestrate tricky behavior or work around limitations.](https://www.terraform.io/docs/providers/null/index.html)
+The inspiration for this repository come from the Hashicorp [documentation](https://www.terraform.io/docs/providers/random/index.html)
 
 ![terraform](terraform.png)
 
