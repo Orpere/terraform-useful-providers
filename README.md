@@ -23,7 +23,7 @@ git clone git@github.com:<YourGitUser>/terraform-useful-providers.git
 
 and use the commands add, commit and push to your own changes
 
-for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explination about all git steps
+for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explanation about all git steps
 
 # Terraform useful providers
 
