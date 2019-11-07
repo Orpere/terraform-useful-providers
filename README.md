@@ -40,13 +40,13 @@ Random Providers permit us to use the terraform logical with out interfere direc
 
 we know the follow resources:
 
-1) [random_id](https://www.terraform.io/docs/providers/random/r/id.html)
-2) [random_integer](https://www.terraform.io/docs/providers/random/r/integer.html)
-3) [random_password](https://www.terraform.io/docs/providers/random/r/password.html)
-4) [random_pet](https://www.terraform.io/docs/providers/random/r/pet.html)
-5) [random_shuffle](https://www.terraform.io/docs/providers/random/r/shuffle.html)
-6) [random_string](https://www.terraform.io/docs/providers/random/r/string.html)
-7) [random_uuid](https://www.terraform.io/docs/providers/random/r/uuid.html)
+1) [random_id](https://www.terraform.io/docs/providers/random/r/id.html) generates random numbers that are intended to be used as unique identifiers for other resources.
+2) [random_integer](https://www.terraform.io/docs/providers/random/r/integer.html) generates random values from a given range, described by the min and max attributes of a given resource.
+3) [random_password](https://www.terraform.io/docs/providers/random/r/password.html) Identical to random_string with the exception that the result is treated as sensitive and, thus, not displayed in console output.
+4) [random_pet](https://www.terraform.io/docs/providers/random/r/pet.html) generates random pet names that are intended to be used as unique identifiers for other resources.(this is the example he have on this repo)
+5) [random_shuffle](https://www.terraform.io/docs/providers/random/r/shuffle.html) generates a random permutation of a list of strings given as an argument.
+6) [random_string](https://www.terraform.io/docs/providers/random/r/string.html) generates a random permutation of alphanumeric characters and optionally special characters.
+7) [random_uuid](https://www.terraform.io/docs/providers/random/r/uuid.html) generates random uuid string that is intended to be used as unique identifiers for other resources.
 
 Note: [for more information](https://www.terraform.io/docs/providers/index.html)
 
