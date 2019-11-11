@@ -2,7 +2,7 @@
 
 how can I use this repository?
 
-This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](###extras) section.
+This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](#extras) section.
 
 ## Task - clone repo terraform-useful-providers
 
