@@ -1,10 +1,12 @@
-## terraform-useful-providers -> repo that you can use to see how useful providers work
+# terraform-useful-providers -> repo that you can use to see how useful providers work
 
-how can I use this repository?
+## how can I use this repository?
 
 This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](#extras) section.
 
-## Task - clone repo terraform-useful-providers
+## How can I use this repo`?`
+
+### Task - clone repo terraform-useful-providers
 
 - open your shell or command line and go to the directory where you pretend to add the repo
 
@@ -16,13 +18,13 @@ cd <directory where pretend to add the repo>
 git clone git@github.com:Orpere/terraform-useful-providers.git
 ```
 
-## Task - move to your repo folder
+### Task - move to your repo folder
 
 ```bash
 cd terraform-useful-providers
 ```
 
-## Task - terraform init
+### Task - terraform init
 
 - this will retrieve all dependencies for terraform scripts
 
@@ -30,7 +32,7 @@ cd terraform-useful-providers
 terraform init
 ```
 
-## Task - run terraform apply
+### Task - run terraform apply
 
 ```terraform
 terraform apply
@@ -41,7 +43,7 @@ terraform apply
 
  
 
-## Task - check the result of the useful provider
+### Task - check the result of the useful provider
 
 - In this case was used random_pet what should give to your resource a pet name as bellow
 
@@ -50,7 +52,7 @@ null_resource.example (local-exec): Executing: ["/bin/sh" "-c" "echo assured-tea
 null_resource.example (local-exec): assured-teal
 ```
 
-## Task - Terraform destroy
+### Task - Terraform destroy
 
 ```terraform
 terraform destroy
@@ -59,7 +61,7 @@ terraform destroy
 - This will request confirmation and if your answer is **yes**
 - this will wipe the resources you have builded
   
-### EXTRAS
+#### EXTRAS
 
 This repo was based on the [documentation](https://www.terraform.io/docs/providers/random/r/pet.html)
 
