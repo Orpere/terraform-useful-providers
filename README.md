@@ -2,7 +2,7 @@
 
 how can I use this repository?
 
-This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](#extras) section.
+This repo has as dependencies a command line or shell git and terraform.You can find the install instructions bellow on [EXTRAS](###extras) section.
 
 ## Task - clone repo terraform-useful-providers
 
@@ -59,7 +59,7 @@ terraform destroy
 - This will request confirmation and if your answer is **yes**
 - this will wipe the resources you have builded
   
-# EXTRAS
+### EXTRAS
 
 This repo was based on the [documentation](https://www.terraform.io/docs/providers/random/r/pet.html)
 
