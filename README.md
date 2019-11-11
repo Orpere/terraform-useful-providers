@@ -36,6 +36,11 @@ terraform init
 terraform apply
 ```
 
+- This step will prompt <<Do you want to perform these actions?>>
+  the answer should be **yes** 
+
+ 
+
 ## Task - check the result of the useful provider
 
 - In this case was used random_pet what should give to your resource a pet name as bellow
@@ -45,6 +50,15 @@ null_resource.example (local-exec): Executing: ["/bin/sh" "-c" "echo assured-tea
 null_resource.example (local-exec): assured-teal
 ```
 
+## Task - Terraform destroy
+
+```terraform
+terraform destroy
+```
+
+- This will request confirmation and if your answer is **yes**
+- this will wipe the resources you have builded
+  
 # EXTRAS
 
 This repo was based on the [documentation](https://www.terraform.io/docs/providers/random/r/pet.html)
