@@ -14,7 +14,7 @@ for more instructions to use git you can check the [link](https://rogerdudler.gi
 After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html) and on your shell:
 
 ```bash
-cd terraform-provisioners
+cd terraform-useful-providers
 terraform init #retrieves your modules and dependencies
 terraform plan #plans the AWS infrastructure
 terraform apply #creates the AWS infrastructure
