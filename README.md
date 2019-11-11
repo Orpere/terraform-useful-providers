@@ -110,7 +110,7 @@ Do you want to perform these actions?
   Enter a value: 
 ```
 
-add yes
+type yes
 
 ```terraform
 random_pet.example: Creating...
