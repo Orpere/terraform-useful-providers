@@ -11,7 +11,92 @@ git clone git@github.com:Orpere/terraform-useful-providers.git
 
 for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explanation about all git steps
 
-After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html).
+After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html) and on your shell:
+
+```bash
+cd terraform-provisioners
+terraform init #retrieves your modules and dependencies
+terraform plan #plans the AWS infrastructure
+terraform apply #creates the AWS infrastructure
+```
+
+The terraform apply command should return a plan as the follow:
+
+```terraform
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # null_resource.example will be created
+  + resource "null_resource" "example" {
+      + id = (known after apply)
+    }
+
+  # random_pet.example will be created
+  + resource "random_pet" "example" {
+      + id        = (known after apply)
+      + length    = 2
+      + separator = "-"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+```
+
+add yes
+
+```terraform
+random_pet.example: Creating...
+random_pet.example: Creation complete after 0s [id=welcomed-dogfish]
+null_resource.example: Creating...
+null_resource.example: Provisioning with 'local-exec'...
+null_resource.example (local-exec): Executing: ["/bin/sh" "-c" "echo welcomed-dogfish"]
+null_resource.example (local-exec): welcomed-dogfish
+null_resource.example: Creation complete after 0s [id=2644746876547856613]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+```
+
+For clean your example please use:
+terraform destroy
+
+```terraform
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # null_resource.example will be destroyed
+  - resource "null_resource" "example" {
+      - id = "2644746876547856613" -> null
+    }
+
+  # random_pet.example will be destroyed
+  - resource "random_pet" "example" {
+      - id        = "welcomed-dogfish" -> null
+      - length    = 2 -> null
+      - separator = "-" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+```
+
+An **yes** will wipe all your infrastructure
 
 Terraform most used commands are:
 
@@ -46,7 +131,7 @@ we know the follow resources:
 
 Note: [for more information](https://www.terraform.io/docs/providers/index.html)
 
-example: the random_pet module which will tag the server on this case with a pet name like "web-server-dog"
+example: the random_pet module which will print to the shell one pet name base on the length requirements.
 
 ```terraform
 resource "random_pet" "example" {
