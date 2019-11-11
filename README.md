@@ -9,21 +9,16 @@ You can use this repo as reference or you can clone the repository to your compu
 git clone git@github.com:Orpere/terraform-useful-providers.git
 ```
 
-you can also fork this repo using the fork button on top right on github and use it as yours as the follow example:
-
-![fork](fork.png)
-
-like this you can clone and edit the repository and commit your own changes.
-
-you can clone your own repo as:
-
-```git
-git clone git@github.com:<YourGitUser>/terraform-useful-providers.git
-```
-
-and use the commands add, commit and push to your own changes
-
 for more instructions to use git you can check the [link](https://rogerdudler.github.io/git-guide/) it will have a much better explanation about all git steps
+
+After clone the repo you can install terraform downloading the adequate version to your OS on [Terraform](https://www.terraform.io/downloads.html).
+
+Terraform most used commands are:
+
+- terraform fmt - cleans up your code formatting
+- terraform init - retrieves your modules and dependencies
+- terraform plan - plans the AWS infrastructure
+- terraform apply - creates the AWS infrastructure
 
 # Terraform useful providers
 
@@ -54,23 +49,22 @@ Note: [for more information](https://www.terraform.io/docs/providers/index.html)
 example: the random_pet module which will tag the server on this case with a pet name like "web-server-dog"
 
 ```terraform
-resource "random_pet" "server" {
-  keepers = {
-    # Generate a new pet name each time we switch to a new AMI id
-    ami_id = "${var.ami_id}"
-  }
-   byte_length = 8
+resource "random_pet" "example" {
+  length = 2
 }
 
-resource "aws_instance" "server" {
-  tags = {
-    Name = "web-server-${random_pet.server.id}"
+resource "null_resource" "example" {
+  provisioner "local-exec" {
+    command = "echo ${random_pet.example}"
   }
 
-  # Read the AMI id "through" the random_pet resource to ensure that
-  # both will change together.
-  ami = "${random_pet.server.keepers.ami_id}"
-  # ... (other aws_instance arguments) ...
-
 }
+```
+
+After run terraform apply as you can see it generate an animal label to the ip as below.
+
+```terraform
+random_pet.example: Creating...
+random_pet.example: Creation complete after 0s [id=precious-antelope]
+null_resource.example: Creating...
 ```

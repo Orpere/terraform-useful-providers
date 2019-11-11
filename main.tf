@@ -1,4 +1,10 @@
+resource "random_pet" "example" {
+  length = 2
+}
 
-module "random_pet" {
-  source = "./random_pet"
+resource "null_resource" "example" {
+  provisioner "local-exec" {
+    command = "echo ${random_pet.example}"
+  }
+
 }
